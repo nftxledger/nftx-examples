@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>NFTx Sandbox</title>
+    <script>
+      let wasm_file = fetch("pkg.wasm");
+
+      WebAssembly.compileStreaming(wasm_file).then((module) => {
+        const sections = WebAssembly.Module.customSections(
+          module,
+          "importobject"
+        );
+
+        const decoder = new TextDecoder();
+        const importObject = decoder.decode(sections[0]);
+        console.log(importObject);
+        eval(importObject + ";window.ii = wasm_bindgen;");
+        window.ii(module).then((importObject) => {
+          console.log("wasm executed successfully");
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

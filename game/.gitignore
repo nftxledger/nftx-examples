@@ -1,0 +1,7 @@
+.idea/
+/target/
+**/*.rs.bk
+.cache
+.DS_Store
+pkg.wasm
+Qm**

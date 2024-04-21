@@ -1,0 +1,25 @@
+{
+    "name": "3D Model",
+    "type": "wasm",
+    "image": "https://nftxledger.com/img/thumbs/thumb-06.png",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "property 1"
+        },
+        "description": {
+            "type": "string",
+            "description": "property 2"
+        }
+    },
+    "attributes": [
+        {
+            "trait_type": "Type 1",
+            "value": "trait value"
+        },
+        {
+            "trait_type": "Type 2",
+            "value": "trait value"
+        }
+    ]
+}

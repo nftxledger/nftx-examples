@@ -1,0 +1,33 @@
+[package]
+name = "nftx-3d"
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"] # enable console.error on panic
+
+[dependencies]
+web-sys = { version = "0.3.64", features = [
+    "console",
+    "Window",
+    "Node",
+    "Document",
+    "Element",
+    "HtmlElement",
+] }
+three-d = {version = "0.17.0", features=["egui-gui"]}
+three-d-asset = {version = "0.7", features = ["gltf", "hdr", "jpeg", "http"] }
+winit = {version = "0.28"}
+wasm-bindgen = {version = "0.2.87"}
+console_error_panic_hook = { version = "0.1.7", optional = true }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.37"
+
+[profile.release]
+opt-level = "s"
